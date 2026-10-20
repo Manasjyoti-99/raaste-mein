@@ -1,0 +1,341 @@
+{
+  "source": "Coordinates, labels, ratings, opening hours and menu price ranges supplied by the builder on 9 October 2026. These are local demo data, not live information.",
+  "currency": "INR",
+  "cafes": [
+    {
+      "id": "rajdhani-chatkare",
+      "name": "Rajdhani Chatkare Foods",
+      "lat": 28.5463952,
+      "lon": 77.1867268,
+      "categoryLabel": "Fast Food / North Indian",
+      "category": "meals",
+      "rating": 3.7,
+      "opens": "00:00",
+      "closes": "24:00",
+      "priceLevel": "$",
+      "priceDescription": "Inexpensive",
+      "menu": [
+        {
+          "name": "Chole Bhature / Poori Sabji",
+          "priceMin": 50,
+          "priceMax": 100
+        },
+        {
+          "name": "Parathas / Snacks",
+          "priceMin": 30,
+          "priceMax": 80
+        },
+        {
+          "name": "Fast Food / Chinese",
+          "priceMin": 60,
+          "priceMax": 120
+        },
+        {
+          "name": "Thali / Meals",
+          "priceMin": 90,
+          "priceMax": 160
+        }
+      ]
+    },
+    {
+      "id": "chaayos-iit",
+      "name": "Chaayos Cafe at IIT Campus",
+      "lat": 28.5463313,
+      "lon": 77.1867177,
+      "categoryLabel": "Cafe / Tea House",
+      "category": "tea",
+      "rating": 4.1,
+      "opens": "10:00",
+      "closes": "23:00",
+      "priceLevel": "$$",
+      "priceDescription": "Moderate",
+      "menu": [
+        {
+          "name": "Custom Chai / Kullhad Chai",
+          "priceMin": 80,
+          "priceMax": 160
+        },
+        {
+          "name": "Bun Maska / Toast",
+          "priceMin": 60,
+          "priceMax": 120
+        },
+        {
+          "name": "Sandwiches / Wraps",
+          "priceMin": 150,
+          "priceMax": 280
+        },
+        {
+          "name": "Parathas / Indian Snacks",
+          "priceMin": 120,
+          "priceMax": 220
+        }
+      ]
+    },
+    {
+      "id": "naivedyam-iit",
+      "name": "Naivedyam (IIT Campus)",
+      "lat": 28.5435893,
+      "lon": 77.1911645,
+      "categoryLabel": "South Indian / Vegetarian Restaurant",
+      "category": "meals",
+      "rating": 4.2,
+      "opens": "08:30",
+      "closes": "22:00",
+      "priceLevel": "$$",
+      "priceDescription": "Moderate",
+      "menu": [
+        {
+          "name": "Masala Dosa / Paper Dosa",
+          "priceMin": 140,
+          "priceMax": 220
+        },
+        {
+          "name": "Idli / Vada Platter",
+          "priceMin": 100,
+          "priceMax": 180
+        },
+        {
+          "name": "Uttapam (Assorted)",
+          "priceMin": 160,
+          "priceMax": 240
+        },
+        {
+          "name": "South Indian Thali / Meals",
+          "priceMin": 220,
+          "priceMax": 320
+        },
+        {
+          "name": "Filter Coffee",
+          "priceMin": 60,
+          "priceMax": 90
+        }
+      ]
+    },
+    {
+      "id": "amul-iit",
+      "name": "Amul Cafe (IIT Campus)",
+      "lat": 28.5448843,
+      "lon": 77.1914434,
+      "categoryLabel": "Ice Cream / Cafe / Beverages",
+      "category": "snacks",
+      "rating": 4.0,
+      "opens": "08:30",
+      "closes": "02:00",
+      "priceLevel": "$",
+      "priceDescription": "Inexpensive",
+      "menu": [
+        {
+          "name": "Ice Cream / Sundaes",
+          "priceMin": 20,
+          "priceMax": 90
+        },
+        {
+          "name": "Milkshakes / Cold Coffee",
+          "priceMin": 40,
+          "priceMax": 80
+        },
+        {
+          "name": "Patties / Sandwiches / Burgers",
+          "priceMin": 30,
+          "priceMax": 70
+        },
+        {
+          "name": "Amul Dairy Products & Snacks",
+          "priceMin": 15,
+          "priceMax": 50
+        }
+      ]
+    },
+    {
+      "id": "nescafe-iit",
+      "name": "Nescafé Coffee Store (IIT Campus)",
+      "lat": 28.5447859,
+      "lon": 77.1914642,
+      "categoryLabel": "Coffee Shop / Cafe / Quick Bites",
+      "category": "coffee",
+      "rating": 4.1,
+      "opens": "08:00",
+      "closes": "04:00",
+      "priceLevel": "$",
+      "priceDescription": "Inexpensive",
+      "menu": [
+        {
+          "name": "Hot Coffee / Espresso",
+          "priceMin": 20,
+          "priceMax": 50
+        },
+        {
+          "name": "Cold Coffee / Iced Beverages",
+          "priceMin": 40,
+          "priceMax": 80
+        },
+        {
+          "name": "Maggi / Noodles",
+          "priceMin": 30,
+          "priceMax": 60
+        },
+        {
+          "name": "Patties / Sandwiches / Bakery Items",
+          "priceMin": 25,
+          "priceMax": 70
+        }
+      ]
+    },
+    {
+      "id": "hpmc-iit",
+      "name": "HPMC Store (IIT Campus)",
+      "lat": 28.5447547,
+      "lon": 77.1913905,
+      "categoryLabel": "Juice / Fruit Products / Snack Store",
+      "category": "snacks",
+      "rating": 4.0,
+      "opens": "09:30",
+      "closes": "20:30",
+      "priceLevel": "$",
+      "priceDescription": "Inexpensive",
+      "menu": [
+        {
+          "name": "Apple / Fruit Juices",
+          "priceMin": 20,
+          "priceMax": 60
+        },
+        {
+          "name": "Fruit Squashes / Syrups",
+          "priceMin": 80,
+          "priceMax": 180
+        },
+        {
+          "name": "Packaged Snacks / Biscuits",
+          "priceMin": 15,
+          "priceMax": 50
+        },
+        {
+          "name": "Jams & Fruit Products",
+          "priceMin": 50,
+          "priceMax": 120
+        }
+      ]
+    },
+    {
+      "id": "bikanervala-iit",
+      "name": "Bikanervala | IIT Delhi Campus",
+      "lat": 28.5426954,
+      "lon": 77.1991594,
+      "categoryLabel": "Sweets / Fast Food / North Indian",
+      "category": "snacks",
+      "rating": 3.7,
+      "opens": "10:00",
+      "closes": "22:00",
+      "priceLevel": "$$",
+      "priceDescription": "Moderate",
+      "menu": [
+        {
+          "name": "Chole Bhature / Raj Kachori",
+          "priceMin": 120,
+          "priceMax": 200
+        },
+        {
+          "name": "Pav Bhaji / Chaat Specialties",
+          "priceMin": 90,
+          "priceMax": 160
+        },
+        {
+          "name": "Indian Sweets / Mithai",
+          "priceMin": 50,
+          "priceMax": 250
+        },
+        {
+          "name": "Thali / North Indian Meals",
+          "priceMin": 180,
+          "priceMax": 320
+        },
+        {
+          "name": "Beverages / Lassi",
+          "priceMin": 50,
+          "priceMax": 100
+        }
+      ]
+    },
+    {
+      "id": "tealogy-iit",
+      "name": "Tealogy I.I.T DELHI HAUZ KHAS",
+      "lat": 28.5427655,
+      "lon": 77.1992027,
+      "categoryLabel": "Tea House / Cafe / Fast Food",
+      "category": "tea",
+      "rating": 3.8,
+      "opens": "10:30",
+      "closes": "23:00",
+      "priceLevel": "$",
+      "priceDescription": "Inexpensive",
+      "menu": [
+        {
+          "name": "Kullhad Tea / Flavored Tea",
+          "priceMin": 20,
+          "priceMax": 60
+        },
+        {
+          "name": "Cold Coffee / Milkshakes",
+          "priceMin": 50,
+          "priceMax": 110
+        },
+        {
+          "name": "Sandwiches / Garlic Bread",
+          "priceMin": 60,
+          "priceMax": 130
+        },
+        {
+          "name": "Momos / Fast Food",
+          "priceMin": 70,
+          "priceMax": 140
+        },
+        {
+          "name": "Maggi / Fries",
+          "priceMin": 40,
+          "priceMax": 90
+        }
+      ]
+    },
+    {
+      "id": "chicago-pizza-iit",
+      "name": "Chicago Pizza (IIT Campus)",
+      "lat": 28.5428368,
+      "lon": 77.1993664,
+      "categoryLabel": "Pizza / Fast Food",
+      "category": "meals",
+      "rating": 3.2,
+      "opens": "09:00",
+      "closes": "22:00",
+      "priceLevel": "$$",
+      "priceDescription": "Moderate",
+      "menu": [
+        {
+          "name": "Personal Slice / Single Slice",
+          "priceMin": 90,
+          "priceMax": 180
+        },
+        {
+          "name": "Regular Pizza (7-inch)",
+          "priceMin": 180,
+          "priceMax": 320
+        },
+        {
+          "name": "Medium / Large Pizza",
+          "priceMin": 350,
+          "priceMax": 650
+        },
+        {
+          "name": "Garlic Bread / Stuffed Garlic Bread",
+          "priceMin": 90,
+          "priceMax": 160
+        },
+        {
+          "name": "Pasta / Beverages",
+          "priceMin": 120,
+          "priceMax": 220
+        }
+      ]
+    }
+  ]
+}

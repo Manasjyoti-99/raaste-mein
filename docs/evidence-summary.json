@@ -1,0 +1,23 @@
+{
+  "kind": "derived-author-export-summary",
+  "description": "Aggregate summary of an inspected author-provided snapshot. This is not raw trip data and cannot be imported as an app backup.",
+  "prototypeVersion": "5.1.0",
+  "completedGpsRecords": 3,
+  "explicitAcceptEventsInSnapshot": 1,
+  "explicitRejectEventsInSnapshot": 0,
+  "retainedChoice": {
+    "venue": "Naivedyam",
+    "category": "meals",
+    "choice": "accept",
+    "timeBand": "lunchtime"
+  },
+  "reconstructedPreference": {
+    "venue": 0.6,
+    "mealsCategory": 0.6
+  },
+  "matchedRoutinesInSnapshot": 0,
+  "completedReplayRecordsInSnapshot": 0,
+  "authorConfirmedReplayAndLearningDemonstrations": true,
+  "rawPersonalBackupIncluded": false,
+  "continuousGpsTraceAvailable": false
+}

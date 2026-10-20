@@ -1,0 +1,93 @@
+{
+  "departureTime": "11:00",
+  "timeZoneLabel": "IST",
+  "tripSlackMinutes": 5,
+  "maxDistanceFromRouteMetres": 300,
+  "maxDetourMinutes": 30,
+  "scoreThreshold": 0.5,
+  "triggerDistanceMetres": 350,
+  "maxSuggestionsPerTrip": 2,
+  "minimumDistanceBetweenSuggestionsMetres": 250,
+  "baselineAffinity": 0.5,
+  "weights": {
+    "detour": 0.1,
+    "timeFit": 0.2,
+    "rating": 0.1,
+    "affinity": 0.6
+  },
+  "timeFits": [
+    {
+      "label": "morning",
+      "start": "06:00",
+      "end": "12:00",
+      "tea": 1.0,
+      "coffee": 1.0,
+      "snacks": 0.7,
+      "meals": 0.4
+    },
+    {
+      "label": "lunchtime",
+      "start": "12:00",
+      "end": "15:00",
+      "tea": 0.55,
+      "coffee": 0.6,
+      "snacks": 0.7,
+      "meals": 1.0
+    },
+    {
+      "label": "afternoon",
+      "start": "15:00",
+      "end": "17:00",
+      "tea": 0.85,
+      "coffee": 0.8,
+      "snacks": 0.85,
+      "meals": 0.5
+    },
+    {
+      "label": "evening",
+      "start": "17:00",
+      "end": "20:00",
+      "tea": 1.0,
+      "coffee": 0.8,
+      "snacks": 1.0,
+      "meals": 0.6
+    },
+    {
+      "label": "night",
+      "start": "20:00",
+      "end": "06:00",
+      "tea": 0.65,
+      "coffee": 0.5,
+      "snacks": 0.7,
+      "meals": 0.9
+    }
+  ],
+  "venuePreferenceWeight": 0.8,
+  "learningTripsBeforePersonalization": 1,
+  "learningAcceptStep": 0.1,
+  "learningRejectStep": 0.05,
+  "alertTimeoutSeconds": 12,
+  "routine": {
+    "minimumTrips": 3,
+    "maxEndpointDistanceMetres": 150,
+    "maxDepartureSpanMinutes": 30
+  },
+  "gps": {
+    "maxAccuracyMetres": 50,
+    "maxDistanceFromRouteMetres": 75,
+    "maxAgeSeconds": 15,
+    "futureToleranceSeconds": 5,
+    "maximumSpeedMps": 12,
+    "jumpAllowanceMetres": 30,
+    "startRadiusMetres": 75,
+    "arrivalRadiusMetres": 30,
+    "arrivalAlongToleranceMetres": 50,
+    "arrivalFixes": 2,
+    "arrivalMinIntervalSeconds": 1,
+    "maxHistoryGapSeconds": 30,
+    "maxHistoryStepMetres": 250,
+    "minimumHistoryCoverage": 0.8,
+    "movingMinimumMps": 0.5,
+    "positionTimeoutMs": 15000
+  }
+}

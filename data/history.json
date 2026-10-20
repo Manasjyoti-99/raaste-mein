@@ -1,0 +1,216 @@
+{
+  "version": 1,
+  "description": "Ten synthetic completed trips for testing. These are sample data, not the user's travel or cafe feedback.",
+  "trips": [
+    {
+      "id": "sample-01",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-09-28",
+      "departureTime": "11:00",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    },
+    {
+      "id": "sample-02",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-09-29",
+      "departureTime": "11:10",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    },
+    {
+      "id": "sample-03",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-09-30",
+      "departureTime": "11:20",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    },
+    {
+      "id": "sample-04",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-10-01",
+      "departureTime": "17:45",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    },
+    {
+      "id": "sample-05",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-10-02",
+      "departureTime": "18:00",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    },
+    {
+      "id": "sample-06",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-10-05",
+      "departureTime": "17:55",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    },
+    {
+      "id": "sample-07",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-09-26",
+      "departureTime": "13:00",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    },
+    {
+      "id": "sample-08",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-09-27",
+      "departureTime": "13:10",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    },
+    {
+      "id": "sample-09",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-10-03",
+      "departureTime": "13:20",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    },
+    {
+      "id": "sample-10",
+      "source": "sample",
+      "completed": true,
+      "date": "2026-10-06",
+      "departureTime": "08:00",
+      "start": {
+        "name": "Jwalamukhi Hostel",
+        "coordinates": [
+          28.54928,
+          77.18372
+        ]
+      },
+      "end": {
+        "name": "IIT Delhi Post Office",
+        "coordinates": [
+          28.54287,
+          77.19924
+        ]
+      }
+    }
+  ]
+}

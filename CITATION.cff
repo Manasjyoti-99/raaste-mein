@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you refer to this prototype, please cite the author and version."
+title: "Raaste Mein: Food Stop Recommendation from Route Context and Feedback"
+type: software
+version: 5.1.0
+authors:
+  - family-names: Baishya
+    given-names: Manasjyoti
+    affiliation: IIT Delhi
+abstract: "A fixed-route smartphone prototype combining GPS context, geometric travel estimates, transparent ranking and persistent feedback for food stop recommendations."
+keywords:
+  - food recommendation
+  - passenger experience
+  - GPS
+  - progressive web app
+  - explicit feedback

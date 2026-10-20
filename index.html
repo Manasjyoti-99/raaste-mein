@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#09141e">
+  <meta name="description" content="Replay or track the fixed IIT Delhi trip with GPS, contextual stop suggestions and local learning.">
+  <title>In-Vehicle Suggestions · v5.1.0</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2309141e'/%3E%3Cpath d='M9 24V15a6 6 0 0 1 6-6h8' fill='none' stroke='%237df5cd' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='9' cy='24' r='3' fill='white'/%3E%3Ccircle cx='23' cy='9' r='3' fill='%237df5cd'/%3E%3C/svg%3E">
+  <!-- Leaflet is included locally: no CDN or package installation is needed. -->
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="style.css?v=5.1.0">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/app-192.png">
+  <script src="vendor/leaflet/leaflet.js" defer></script>
+  <script src="suggestion-engine.js?v=5.1.0" defer></script>
+  <script src="feedback-learning.js?v=5.1.0" defer></script>
+  <script src="routine-engine.js?v=5.1.0" defer></script>
+  <script src="gps-engine.js?v=5.1.0" defer></script>
+  <script src="order-engine.js?v=5.1.0" defer></script>
+  <script src="history-backup.js?v=5.1.0" defer></script>
+  <script src="pwa.js?v=5.1.0" defer></script>
+  <script src="app.js?v=5.1.0" defer></script>
+</head>
+<body>
+  <main class="trip-screen" aria-label="Journey map and controls">
+    <div class="map-surface" aria-label="Fixed route map">
+      <div id="map"></div>
+      <!-- This draws the same route if Leaflet itself is unavailable. -->
+      <svg id="fallback-map" role="img" aria-label="Route outline with start, destination and current position" hidden></svg>
+      <p class="map-health" id="gps-status" role="status" hidden>GPS starts only when you press Start GPS.</p>
+      <p class="map-notice" id="map-notice" hidden></p>
+      <p class="feedback-notice" id="feedback-notice" role="status" aria-live="polite" hidden></p>
+      <button class="fit-route-button" id="fit-route" type="button" aria-label="Fit the whole route on the map" title="Fit route" disabled>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/><circle cx="12" cy="12" r="4"/></svg>
+      </button>
+    </div>
+
+    <header class="trip-header" id="trip-header">
+      <div class="destination-row">
+        <span class="destination-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        </span>
+        <div class="destination-copy">
+          <p class="eyebrow" id="trip-mode-title">Trip replay</p>
+          <h1 id="destination-name">IIT Delhi Post Office</h1>
+          <p class="origin" id="origin-name">From Jwalamukhi Hostel</p>
+        </div>
+        <span class="mode-badge" id="build-version" aria-label="App version 5.1.0">v5.1.0</span>
+      </div>
+      <div class="journey-bar" aria-label="Journey date, time and moving speed">
+        <div><span class="bar-label">Date</span><span id="journey-date">—</span></div>
+        <div><span class="bar-label">Time · IST</span><span id="journey-time">11:00</span></div>
+        <div><span class="bar-label" id="journey-speed-label">Replay · 2×</span><span class="simulated-speed" id="simulated-speed">15 km/h simulated</span></div>
+      </div>
+    </header>
+
+    <section class="trip-controls" id="trip-controls" aria-label="Journey controls">
+      <div class="trip-metrics">
+        <div><span class="metric-value" id="time-left">—</span><span class="metric-label">Time left</span></div>
+        <div><span class="metric-value" id="distance-left">—</span><span class="metric-label">Distance left</span></div>
+        <div><span class="metric-value" id="spare-left">5 min</span><span class="metric-label">Spare time</span></div>
+      </div>
+      <div class="progress-copy"><span id="trip-status" role="status" aria-live="polite">Loading trip…</span><span id="progress-label">0%</span></div>
+      <progress id="trip-progress" max="100" value="0" aria-label="Trip progress"></progress>
+
+      <div class="action-row">
+        <button class="play-button" id="play-button" type="button" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path id="play-icon" d="M8 5v14l11-7Z"/></svg>
+          <span id="play-label">Play trip</span>
+        </button>
+        <button class="stops-button" id="food-spots-button" type="button" disabled>All stops · 9</button>
+        <button class="icon-button" id="open-settings" type="button" aria-label="Trip settings" title="Trip settings" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="9" cy="18" r="2"/></svg>
+        </button>
+        <button class="icon-button" id="open-tools" type="button" aria-label="More: learning, history and app tools" title="More" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg></button>
+      </div>
+    </section>
+
+    <section class="error-panel" id="error-panel" role="alert" hidden>
+      <h2>Trip data could not load</h2>
+      <p id="error-message"></p>
+    </section>
+    <noscript><p class="no-script">Enable JavaScript to replay this trip.</p></noscript>
+  </main>
+
+  <dialog class="food-dialog setup-dialog" id="setup-dialog" aria-labelledby="setup-title">
+    <header class="food-dialog-header"><div><p class="eyebrow">Trip settings</p><h2 id="setup-title">Before you go</h2></div><button id="close-settings" type="button">View map</button></header>
+    <p class="setup-route">Jwalamukhi Hostel <span aria-hidden="true">→</span> IIT Delhi Post Office</p>
+    <div class="trip-mode" role="group" aria-label="Trip mode"><button id="replay-mode" type="button" aria-pressed="true" disabled>Replay</button><button id="gps-mode" type="button" aria-pressed="false" disabled>Live GPS</button></div>
+    <p class="saved-info" id="setup-mode-note">Replay follows the route at a simulated speed. Choose a departure time to try different suggestions.</p>
+    <div class="context-row main-context">
+      <label>Departure <span class="time-zone" id="time-zone">IST</span><input id="departure-time" type="time" value="11:00" required disabled></label>
+      <label>Spare time (min)<input id="trip-slack" type="number" min="0" max="30" step="any" inputmode="decimal" value="5" required disabled></label>
+      <label class="replay-date-label"><span id="trip-date-label">Replay date</span><input id="replay-date" type="date" required disabled></label>
+    </div>
+    <div class="speed-row" id="replay-speed-settings">
+      <span class="speed-label" id="speed-label">Replay speed</span>
+      <div class="speed-buttons" role="group" aria-labelledby="speed-label">
+        <button type="button" data-speed="1" aria-pressed="false" disabled>1×</button><button type="button" data-speed="2" aria-pressed="true" disabled>2×</button><button type="button" data-speed="4" aria-pressed="false" disabled>4×</button>
+      </div>
+    </div>
+    <p class="trip-clock-bar" id="trip-clock">11:00 IST · Morning</p>
+    <button class="setup-start-button" id="setup-start" type="button" disabled>Start replay</button>
+    <button class="setup-stops-button" id="setup-stops" type="button" disabled>Browse all 9 stops</button>
+    <p class="saved-info">Preselection is optional. Suggestions appear automatically as you approach.</p>
+    <p class="safety-note">For replay or passenger use. Stop safely before interacting with your phone.</p>
+  </dialog>
+
+  <dialog class="food-dialog tools-dialog" id="tools-dialog" aria-labelledby="tools-title">
+    <header class="food-dialog-header"><div><p class="eyebrow">More</p><h2 id="tools-title">Your trip</h2></div><button id="close-tools" type="button">Close</button></header>
+    <p class="routine-status" id="routine-status">Saved replays · no routine yet</p>
+    <p class="selected-stop" id="selected-stop" hidden></p>
+    <p class="learning-status" id="learning-status">Replay alerts are on. No preselection needed.</p>
+    <div class="tools-actions">
+      <button id="learning-button" type="button" disabled>Routines & learning</button>
+      <button id="demo-button" type="button" disabled>Demo controls</button>
+      <button class="reset-button" id="reset-button" type="button" disabled>Reset trip · keep history</button>
+      <button id="install-app" type="button" hidden>Install app</button><button id="update-app" type="button" hidden>Update app</button>
+    </div>
+    <p class="app-status" id="tools-gps-status" hidden></p>
+    <p class="app-status" id="offline-status" role="status">Preparing offline replay and menus…</p>
+    <p class="app-status" id="wake-status">Screen lock released while paused.</p>
+    <p class="saved-info">Changing trip mode starts a new trip and keeps your saved history. Trips and food choices stay on this browser.</p>
+  </dialog>
+
+  <dialog class="suggestion-card" id="suggestion-dialog" aria-labelledby="suggestion-name">
+    <div class="suggestion-handle" id="suggestion-handle" aria-hidden="true"></div>
+    <div class="suggestion-heading"><p class="eyebrow" id="suggestion-heading-label">A stop along your route</p><button class="close-alert-button" id="close-suggestion" type="button" aria-label="Close suggestion without giving feedback">×</button></div>
+    <span class="open-badge" id="suggestion-open">Open at arrival</span>
+    <h2 id="suggestion-name" tabindex="-1"></h2>
+    <p class="suggestion-category" id="suggestion-category"></p>
+    <div class="suggestion-stats"><span id="suggestion-rating"></span><span id="suggestion-detour"></span><span id="suggestion-ahead"></span></div>
+    <p class="suggestion-reason" id="suggestion-reason"></p>
+    <div class="suggestion-actions"><button class="accept-button" id="accept-suggestion" type="button">Accept</button><button class="dismiss-button" id="dismiss-suggestion" type="button">Reject</button></div>
+    <button class="preorder-button" id="preorder-suggestion" type="button">Pre-order · demo</button>
+    <details class="score-details"><summary>Why this stop?</summary><p id="suggestion-breakdown"></p><p>Hours and ratings use your saved cafe information.</p></details>
+    <p class="saved-info" id="alert-close-note">Closes after 12 seconds. Closing does not record a rejection.</p>
+  </dialog>
+
+  <dialog class="food-dialog" id="food-dialog" aria-labelledby="food-dialog-title">
+    <header class="food-dialog-header"><div><p class="eyebrow">Choose freely</p><h2 id="food-dialog-title">All stops</h2></div><div class="food-dialog-actions"><button id="start-replay" type="button" disabled>Start replay</button><button id="next-trip-button" type="button">Next trip</button><button id="close-food-dialog" type="button">Close</button></div></header>
+    <p class="food-context" id="food-context"></p>
+    <p class="saved-info">Distances and extra travel times are estimates. Hours and ratings come from saved data.</p>
+    <ol class="food-list" id="food-list"></ol>
+    <div class="food-dialog-footer"><p>Your feedback stays saved when you start another trip.</p></div>
+  </dialog>
+
+  <dialog class="food-dialog learning-dialog" id="learning-dialog" aria-labelledby="learning-title">
+    <header class="food-dialog-header"><div><p class="eyebrow">Built from trips and choices</p><h2 id="learning-title">Routines & learning</h2></div><button id="close-learning" type="button">Close</button></header>
+    <div class="routine-mode" role="group" aria-label="History used for routine detection"><button id="use-replays" type="button" aria-pressed="true">Saved replays</button><button id="use-gps" type="button" aria-pressed="false">GPS trips</button><button id="use-sample" type="button" aria-pressed="false">Sample demo</button></div>
+    <p class="food-context" id="routine-basis"></p>
+    <section class="routine-cards" id="routine-cards" aria-label="Detected routines"></section>
+    <details class="trip-history"><summary id="trip-history-title">Completed replay history (0)</summary><ol class="history-list" id="history-list"></ol></details>
+    <h3 class="learning-section-title">Food preferences</h3>
+    <p class="food-context" id="learning-summary"></p>
+    <section id="category-learning" aria-label="Category preferences"></section>
+    <section id="venue-learning" aria-label="Venue preferences"></section>
+    <details class="history-backup"><summary>Move or back up my history</summary><p class="saved-info">Save your choices and completed replays before moving to a new app address.</p><div class="backup-actions"><button id="save-backup" type="button">Save history backup</button><label class="file-button">Choose backup<input id="restore-backup" type="file" accept="application/json,.json"></label></div><p id="backup-status" class="saved-info" role="status"></p><button id="confirm-restore" type="button" hidden>Replace my history with this backup</button></details>
+    <button class="reset-learning-button" id="reset-learning" type="button">Reset learning and saved trips</button>
+    <p class="saved-info">Reset trip keeps your history and preferences. Reset learning clears saved replays and food preferences. Sample trips remain available for demonstration.</p>
+  </dialog>
+
+  <dialog class="food-dialog order-dialog" id="order-dialog" aria-labelledby="order-title">
+    <header class="food-dialog-header"><div><p class="eyebrow">Simulated pre-order</p><h2 id="order-title">Menu & cart</h2></div><button id="close-order" type="button">Close</button></header>
+    <p class="food-context" id="order-context"></p>
+    <p class="saved-info" id="order-price-note">Demo unit prices use the lower end of your supplied price ranges. Nothing is sent to the cafe and no payment is taken.</p>
+    <section id="order-editor">
+      <ul class="menu-list" id="order-menu" aria-label="Saved cafe menu"></ul>
+      <section class="cart-panel" aria-labelledby="cart-heading"><h3 id="cart-heading">Your demo cart</h3><ul id="cart-lines" class="cart-lines"></ul><p class="cart-total" id="cart-total">Demo total ₹0</p><p id="order-arrival" class="food-context"></p><p id="order-error" class="saved-info" role="status"></p><button id="confirm-order" class="preorder-button" type="button" disabled>Confirm demo pre-order & accept stop</button><p class="saved-info">Confirmation records one Accept choice for this venue. Closing the menu gives no feedback.</p></section>
+    </section>
+    <section class="order-receipt" id="order-receipt" hidden aria-label="Simulated order confirmation"></section>
+  </dialog>
+
+  <dialog class="food-dialog" id="demo-dialog" aria-labelledby="demo-title">
+    <header class="food-dialog-header"><div><p class="eyebrow">Presentation controls</p><h2 id="demo-title">Demo controls</h2></div><button id="close-demo" type="button">Close</button></header>
+    <div class="demo-actions"><button id="demo-reset-trip" type="button">Reset trip · keep my history</button><button id="demo-sample" type="button">Load sample routine demo</button><button id="demo-reset-learning" type="button">Reset learning and saved trips</button></div>
+    <p class="saved-info">Sample demo uses ten labelled synthetic trips and an 11:10 IST weekday replay. It leaves your food preferences and saved trips intact.</p>
+    <p class="saved-info">Reset learning clears your choices and completed replays. Save a history backup first if you want to restore them.</p>
+    <h3 class="learning-section-title">Demo pre-orders this trip</h3><ul class="demo-orders" id="demo-orders"></ul>
+  </dialog>
+</body>
+</html>
