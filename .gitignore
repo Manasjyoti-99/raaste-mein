@@ -1,0 +1,24 @@
+# Local development and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+*.log
+.env
+.env.*
+!.env.example
+
+# Personal exports and credentials are not project reference data
+InVehicle_History_*.json
+local-history/
+private/
+*.pem
+*.key
+
+# Generated archives and local work folders
+*.zip
+tmp/
+node_modules/
