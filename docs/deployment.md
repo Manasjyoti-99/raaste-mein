@@ -60,4 +60,4 @@ The app requests screen wake lock where available. Backgrounding pauses tracking
 
 The submitted runtime is frozen at v5.1.0. Adding the final edited video, screenshots or documentation does not require changing the JavaScript or clearing app history. If changing runtime code later, retain coherent versioning across the HTML, manifest and service-worker cache.
 
-This documentation update restores the empty `.nojekyll` marker expected by [source-integrity.json](source-integrity.json). Application code, configuration, media and cache versions are unchanged. Updating these repository documents does not replace a phone's localStorage records.
+The repository retains its `.nojekyll` publishing marker with one newline. Its current checksum is recorded in [source-integrity.json](source-integrity.json), alongside the unchanged application-file hashes. This marker does not affect app behavior. Application code, configuration, media and cache versions are unchanged. Updating these repository documents does not replace a phone's localStorage records.

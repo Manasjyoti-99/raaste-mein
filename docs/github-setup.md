@@ -8,7 +8,7 @@ Live app: [GitHub Pages](https://manasjyoti-99.github.io/raaste-mein/)
 1. Extract the supplied ZIP on the computer. Open its inner `raaste-mein` folder.
 2. Open the existing repository on GitHub and select the `main` branch.
 3. Choose **Add file > Upload files**. Drag the **contents** of the inner folder into the upload area. `index.html`, `README.md`, `data`, `docs`, `assets`, `vendor`, `route` and `icons` must remain at the repository root. Do not upload the ZIP or an extra outer folder.
-4. Include the packaged `.nojekyll` file. It is deliberately empty and restores the original integrity hash. Existing `.gitattributes` and `.gitignore` are unchanged.
+4. Keep the existing `.nojekyll` publishing marker. Its single newline is recorded in the source-integrity manifest and does not affect app behavior. Existing `.gitattributes` and `.gitignore` are unchanged.
 5. Use the commit message **Update project documentation and restore source integrity**. Review the changed-file list and commit the upload. No file deletion is needed for this update.
 6. Open the README and check its live app, report, screenshot and research links. Keep GitHub Pages configured to publish `main` from `/(root)`.
 

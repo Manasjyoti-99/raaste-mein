@@ -12,13 +12,13 @@ The original frozen source archive is `InVehicle_v5_1_0_MobileMap.zip` with SHA-
 d57f2cb4e3afca782b54841f9152ceb32cf08984b55e17c7e60339d24473c324
 ```
 
-[source-integrity.json](source-integrity.json) records the source commit and individual runtime file hashes. Those hashes describe this exact source snapshot, not an independently certified release.
+[source-integrity.json](source-integrity.json) records the original source commit and the runtime file hashes used by this repository. The publishing-marker adjustment is documented below. These hashes are not an independently certified release.
 
 ## Repository documentation update, 22 October 2026
 
 This upload folder was prepared from the public repository snapshot at commit `c5c8a69e948d451f313b214bb5dbd829e091c208`. The application remains v5.1.0. The update adds the current public app address and author-supplied YouTube demonstration link, updates instructions for the existing repository and adds a proposed research plan.
 
-The `.nojekyll` marker in that public snapshot contained one newline. It is restored here to an empty file, matching the original frozen-source SHA-256 already listed in [source-integrity.json](source-integrity.json). All 31 listed runtime files therefore match that manifest. The JavaScript, HTML, CSS, JSON, icons and vendor files are unchanged from the reviewed repository. No personal trip backup is added.
+The `.nojekyll` publishing marker in that public snapshot contained one newline. It retained that newline in the uploaded repository at commit `4046c02f3a33c200646e83c32c68cdc0ec519515`. This has no effect on app behavior. The integrity manifest now records the actual repository marker hash; its `packagingAdjustments` entry also preserves the original empty-file hash. All 31 listed runtime files match the corrected manifest, while the JavaScript, HTML, CSS, JSON, icons and vendor files remain unchanged from the frozen prototype. No personal trip backup is added.
 
 ## Geometry and venue data
 

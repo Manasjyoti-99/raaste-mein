@@ -4,7 +4,7 @@
   "sourceArchiveName": "InVehicle_v5_1_0_MobileMap.zip",
   "sourceArchiveSha256": "d57f2cb4e3afca782b54841f9152ceb32cf08984b55e17c7e60339d24473c324",
   "runtimeFiles": {
-    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    ".nojekyll": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
     "app.js": "742b879fc79d8c647af115a39427f781eb0b830046dd6df9c82ef76c2ec15559",
     "data/cafes.json": "429851d18241225064ab01c520471796e1cf23136329060d3c9db12b651dc29f",
     "data/demo-settings.json": "d46a560f5313151fa02a7157583023dba30d5c37b8b401a7d314d7e6f56063db",
@@ -36,5 +36,13 @@
     "vendor/leaflet/leaflet.js": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a",
     "vendor/leaflet/leaflet.js.map": "600a10dc5cd110de0699510d322afcbe01c7ca90b4c5f48adc20314c70aac753"
   },
-  "note": "Hashes refer to unchanged runtime files copied from the final prototype. Repository documentation and evidence assets are additional files."
+  "note": "Hashes describe the runtime files in the repository. Application code, data and assets are unchanged from the frozen prototype. The .nojekyll publishing marker is documented separately in packagingAdjustments. Repository documentation and evidence assets are additional files.",
+  "packagingAdjustments": [
+    {
+      "path": ".nojekyll",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repositorySha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "reason": "The GitHub publishing marker contains one newline rather than the original empty file. Application behavior and all application-code, data and asset hashes are unchanged."
+    }
+  ]
 }
