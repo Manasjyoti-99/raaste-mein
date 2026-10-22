@@ -1,32 +1,43 @@
-# Creating the GitHub repository
+# Updating the existing GitHub repository
 
-Suggested repository name: **raaste-mein**.
+Repository: [Manasjyoti-99/raaste-mein](https://github.com/Manasjyoti-99/raaste-mein)  
+Live app: [GitHub Pages](https://manasjyoti-99.github.io/raaste-mein/)
 
-Suggested description:
+## Upload this prepared folder
+
+1. Extract the supplied ZIP on the computer. Open its inner `raaste-mein` folder.
+2. Open the existing repository on GitHub and select the `main` branch.
+3. Choose **Add file > Upload files**. Drag the **contents** of the inner folder into the upload area. `index.html`, `README.md`, `data`, `docs`, `assets`, `vendor`, `route` and `icons` must remain at the repository root. Do not upload the ZIP or an extra outer folder.
+4. Include the packaged `.nojekyll` file. It is deliberately empty and restores the original integrity hash. Existing `.gitattributes` and `.gitignore` are unchanged.
+5. Use the commit message **Update project documentation and restore source integrity**. Review the changed-file list and commit the upload. No file deletion is needed for this update.
+6. Open the README and check its live app, report, screenshot and research links. Keep GitHub Pages configured to publish `main` from `/(root)`.
+
+This package contains 60 repository files; no file exceeds 25 MiB. The browser upload is intended to fit one batch. See GitHub's [file upload instructions](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository) for current limits and the Git alternative.
+
+The source application and its version remain unchanged. A repository upload does not copy or clear local trip records on the phone.
+
+## Set the About panel manually
+
+Uploading files cannot change repository metadata. Open the gear beside **About** on the repository home page and enter:
+
+**Description**
 
 > Route-aware food stop recommendation prototype with live GPS, replay and explicit-feedback learning. IIT Delhi ideathon project.
 
-## Browser upload if account integration is unavailable
+**Website**
 
-1. Sign in to GitHub and open <https://github.com/new>.
-2. Select your personal account as owner and enter `raaste-mein` as the name.
-3. Choose **Public** if evaluators should open the code and report without being invited.
-4. Leave README, .gitignore and license initialisation unchecked. The prepared files already contain the first two, and no license has been selected for the author's code.
-5. Click **Create repository**.
-6. Extract the provided repository ZIP. Open its `raaste-mein` folder. Its contents include `README.md`, `index.html`, `data`, `docs`, `assets`, `vendor` and `icons`.
-7. In the new repository choose **uploading an existing file**, or **Add file > Upload files**. Drag the **contents of the folder** into the upload area. Do not upload the ZIP itself or wrap the project inside another outer folder.
-8. Use a commit message such as **Add final IIT Delhi prototype v5.1.0**, then commit the uploaded files.
-9. Check that the main README appears and its PDF, screenshot and methods links open. Copy the actual repository URL for the submission description.
+<https://manasjyoti-99.github.io/raaste-mein/>
 
-GitHub's web upload accepts up to 100 files at a time and 25 MiB per file. The prepared repository fits those limits without the future video. A Git push can also upload the prepared folder if preferred.
+**Topics**
 
-## Optional hosting
+`pwa`, `recommender-system`, `gps`, `smart-mobility`
 
-The repository URL is for code and project evidence. A live HTTPS app is a separate GitHub Pages configuration. Follow [deployment.md](deployment.md) when ready. This step is not required merely to share the project repository and does not transfer the existing phone's history automatically.
+Save the panel. These metadata changes must be made on GitHub; they are not applied by the ZIP.
 
-## Official instructions
+## Optional release
 
-- [Creating a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository)
-- [Uploading existing files](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository)
-- [Adding locally hosted code](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)
-- [Configuring GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
+After the upload, open **Releases > Draft a new release**. If `v5.1.0` does not already exist, create that tag from the reviewed `main` commit and use the title **Raaste Mein v5.1.0 — ideathon prototype**. Describe it as the frozen mobile prototype with documentation, route data, screenshots and technical report. State the recording's actual availability. Creating a release is optional; this package does not create a remote tag or release.
+
+## Final video link
+
+The [author-supplied YouTube demonstration](https://www.youtube.com/shorts/S3F9gqr6sio) is linked in the README and [video notes](../assets/video/README.md). No MP4 upload is required. Keep the existing repository contents and upload the updated folder contents over the matching paths; no deletions are required.

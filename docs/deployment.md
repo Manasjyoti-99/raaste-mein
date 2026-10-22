@@ -2,6 +2,12 @@
 
 The repository root is the static application root. Relative URLs are retained, so the app can also run under a repository subpath on an HTTPS host.
 
+## Current live address
+
+Open [Raaste Mein on GitHub Pages](https://manasjyoti-99.github.io/raaste-mein/). This address served the repository's v5.1.0 entry page when checked on 22 October 2026. Future availability depends on the repository and its Pages configuration.
+
+On the phone, open the address online, wait for the app to become ready and install it using the steps below. Launch the installed PWA for the intended demonstration. A separate device or hosting origin starts with its own local history unless a backup is restored.
+
 ## Windows local preview
 
 Open PowerShell or Command Prompt in the folder containing `index.html`:
@@ -24,9 +30,9 @@ Localhost is suitable for a desktop preview. A phone accessing a PC over a plain
 
 The installed interface uses standalone portrait mode from `manifest.json`. Replay can be demonstrated without being on campus. Live GPS requires the fixed route and trusted location fixes.
 
-## Optional GitHub Pages hosting
+## GitHub Pages configuration
 
-Creating the repository does not enable a public live website. After the files are uploaded, hosting can be configured separately:
+The live address above already serves the app. If hosting needs to be configured again, use the following settings:
 
 1. Open the repository's **Settings**.
 2. Open **Pages**.
@@ -53,3 +59,5 @@ The app requests screen wake lock where available. Backgrounding pauses tracking
 ## Video and source updates
 
 The submitted runtime is frozen at v5.1.0. Adding the final edited video, screenshots or documentation does not require changing the JavaScript or clearing app history. If changing runtime code later, retain coherent versioning across the HTML, manifest and service-worker cache.
+
+This documentation update restores the empty `.nojekyll` marker expected by [source-integrity.json](source-integrity.json). Application code, configuration, media and cache versions are unchanged. Updating these repository documents does not replace a phone's localStorage records.

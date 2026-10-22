@@ -12,6 +12,8 @@ The working demonstration runs as an installed Android progressive web app (PWA)
 
 ## Start here
 
+- [Open the live app](https://manasjyoti-99.github.io/raaste-mein/) — use HTTPS on the phone, then install the PWA for the intended demonstration.
+- [Watch the demonstration on YouTube](https://www.youtube.com/shorts/S3F9gqr6sio)
 - [Technical report, PDF](docs/Raaste_Mein_Technical_Report.pdf)
 - [Editable presentation, PowerPoint](docs/Raaste_Mein_Technical_Report.pptx)
 - [System architecture and module responsibilities](docs/architecture.md)
@@ -19,7 +21,10 @@ The working demonstration runs as an installed Android progressive web app (PWA)
 - [Recorded demonstration and evidence boundaries](docs/evidence.md)
 - [Running, installing and hosting the app](docs/deployment.md)
 - [Original screenshot gallery](assets/screenshots/README.md)
-- [Demonstration video status](assets/video/README.md)
+- [Demonstration video notes](assets/video/README.md)
+- [Future research proposal and evaluation plan](docs/future-research.md)
+
+**Demo video:** [Watch Raaste Mein on YouTube](https://www.youtube.com/shorts/S3F9gqr6sio). The author-supplied recording is hosted externally; the [screenshot gallery](assets/screenshots/README.md), [evidence record](docs/evidence.md) and reproducible source are included here.
 
 ## Problem and scope
 
@@ -63,7 +68,7 @@ py -m http.server 8000 --bind 127.0.0.1
 
 If the Python launcher is unavailable, use `python` instead of `py`. Open <http://localhost:8000/?v=5.1.0>.
 
-No npm install, framework build, API key or recommendation server is required. Phone GPS and PWA installation use an HTTPS address. See [deployment instructions](docs/deployment.md) for the installed-phone workflow and optional GitHub Pages hosting.
+No npm install, framework build, API key or recommendation server is required. Phone GPS and PWA installation use an HTTPS address. See [deployment instructions](docs/deployment.md) for the installed-phone workflow and the existing GitHub Pages deployment.
 
 ## Demonstration modes
 
@@ -114,12 +119,16 @@ A normal app update on the same origin retains history. A different host or devi
 | `vendor/leaflet/`, `icons/` | Bundled map library and app icons |
 | `route/` | Original supplied route geometry in KML format |
 | `assets/screenshots/` | Eight supplied final-layout images and an observation index |
-| `assets/video/` | Instructions for adding the edited final demonstration later |
-| `docs/` | Technical report, diagrams, methods, evidence, deployment and provenance |
+| `assets/video/` | YouTube demonstration link and viewing notes |
+| `docs/` | Technical report, diagrams, methods, evidence, deployment, provenance and proposed future research |
 
 ## Prototype limitations
 
 The current implementation supports a fixed route and geometric travel estimates. It does not model actual side-road access, queues, preparation or eating time. Venue information is saved. Pre-orders are demonstrations. Vehicle display integration and a quantitative evaluation of recommendation quality are outside the implemented scope.
+
+## Future research
+
+The [future research plan](docs/future-research.md) proposes comparing a learned contextual preference model with the current fixed-weight method and a distance-based baseline. Its objectives and evaluation measures are planned work, separate from the implemented v5.1.0 prototype and its demonstration evidence.
 
 ## Attribution and provenance
 

@@ -1,14 +1,13 @@
-# Final demonstration video
+# Demonstration video
 
-The edited final-layout demonstration is pending. This folder is ready for that recording. The available older recording uses v5.0.1 and is intentionally excluded from the final v5.1.0 repository.
+[Watch the Raaste Mein demonstration on YouTube](https://www.youtube.com/shorts/S3F9gqr6sio)
 
-When the edited recording is ready:
+Manasjyoti Baishya supplied this demonstration link on 22 October 2026. The recording is hosted on YouTube; an MP4 is not bundled in this source repository. No video file needs to be uploaded to GitHub to use this link.
 
-1. Add the actual file here, using a descriptive name such as `raaste-mein-demo.mp4`.
-2. Update this page with its duration and a link to the file.
-3. Add the working link in the main README.
-4. State which sections are live GPS and which are replay or illustrative learning.
+## Source and evidence
 
-Do not claim that separately recorded clips are one continuous trip. Use captions where the demo changes mode or presents an illustrative sequence.
+The [eight original screenshots](../screenshots/README.md), [evidence record](../../docs/evidence.md), [methods](../../docs/methods.md) and [technical report](../../docs/Raaste_Mein_Technical_Report.pdf) document the prototype and the limits of the recorded evidence. The app can be reproduced from the source independently of the external recording.
 
-GitHub browser uploads accept files up to 25 MiB each. The Git command-line route accepts up to 100 MiB per ordinary file. Larger files require an appropriate large-file or video-hosting approach. Current details: [Adding a file to a repository](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository).
+Live GPS journeys, controlled replay and illustrative learning sequences are different kinds of demonstration. The linked video is provided as a visual demonstration; it does not add a measured recommendation-quality result or a controlled comparison to the evidence record.
+
+The older local v5.0.1 recording remains excluded from the repository. Adding or changing this external link does not alter application code or saved phone history.
