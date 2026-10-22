@@ -132,6 +132,6 @@ The [future research plan](docs/future-research.md) proposes comparing a learned
 
 ## Attribution and provenance
 
-The repository preserves the final app's runtime files byte for byte. [Source integrity](docs/source-integrity.json) lists their SHA-256 hashes. [Provenance](docs/provenance.md) explains the evidence and package contents.
+The repository preserves the final app's application code, data and assets byte for byte. [Source integrity](docs/source-integrity.json) lists the runtime file hashes and the current `.nojekyll` publishing-marker hash. [Provenance](docs/provenance.md) documents that marker's harmless newline, the evidence and the package contents.
 
 Leaflet is bundled with its [license](vendor/leaflet/LICENSE.txt). Map data attribution belongs to [OpenStreetMap contributors](https://www.openstreetmap.org/copyright). This project is an individual prototype, with no claimed restaurant or food-platform affiliation.

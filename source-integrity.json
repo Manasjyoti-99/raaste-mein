@@ -1,0 +1,48 @@
+{
+  "prototypeVersion": "5.1.0",
+  "sourceCommit": "969f46468f9ed57c5e07ebd1ee016ad60e282f50",
+  "sourceArchiveName": "InVehicle_v5_1_0_MobileMap.zip",
+  "sourceArchiveSha256": "d57f2cb4e3afca782b54841f9152ceb32cf08984b55e17c7e60339d24473c324",
+  "runtimeFiles": {
+    ".nojekyll": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "app.js": "742b879fc79d8c647af115a39427f781eb0b830046dd6df9c82ef76c2ec15559",
+    "data/cafes.json": "429851d18241225064ab01c520471796e1cf23136329060d3c9db12b651dc29f",
+    "data/demo-settings.json": "d46a560f5313151fa02a7157583023dba30d5c37b8b401a7d314d7e6f56063db",
+    "data/history.json": "5c8db1445f3c78d24ff8e2b1a6021b619c39e54b144ae65689cb5bf7d0002865",
+    "data/route.json": "4422c6d58c332b27fb5e2d52a03891471cb14db9f01900171f33782b4022131f",
+    "feedback-learning.js": "a164525b3f4d7c1606bc5f1135b9c095b258e57a9f421f0b5bccc26f42896dcd",
+    "gps-engine.js": "85806b2df901a858311d24488732df5da2e0e343c54ac6b017c0953aa5be0a6f",
+    "history-backup.js": "5bd31e89e099ebc0c4f653ecfac72ec5121185a9df8199f2ac9804648d068554",
+    "icons/app-192.png": "e8a23f8d4ca0475e12eb2badee3db4d6d4366cf61ca52e1796aa7403bcc3c0c3",
+    "icons/app-512.png": "858ee89cb9118e2ac9c5da72c8d179ff01c7c704a73a99af5139f0c183252c49",
+    "icons/app-maskable-512.png": "858ee89cb9118e2ac9c5da72c8d179ff01c7c704a73a99af5139f0c183252c49",
+    "index.html": "526879283e3b0b3b2fc3d6d76d401ec81eac162132ab83fb7b1012b91524e3e4",
+    "manifest.json": "0a723bd0a0e35d8f610b20f3faff2bac09e26148e2f60ad903ed1727fe60a8da",
+    "order-engine.js": "476e367db9517e898582ebd69027f16b7edfccd3dd05956ef088361daedd7a58",
+    "pwa.js": "9ae340a1f30a179ac478bc109e4774204ded4620126596a161a774ac37962fde",
+    "recover.html": "87ac884f4f5f95b5a55e03626ea5448a758d538add8dec81a62df52116e488be",
+    "recovery.js": "c6d4fc73e15222a5ab0d5ea9225b022621d77aecb9def4c469509468ca68bbba",
+    "routine-engine.js": "5cdbe71d7c3b46c49d9e0c3b29b62c0d7c0ecb134660b6ebd7591f612d94bbe7",
+    "service-worker.js": "d72d10236934ed654a9deadbd30e7e8552c901d485793b20479755de6b0d1a0e",
+    "style.css": "99eb5b1050de47385c5a6defafc88ff1b8b0880402d89c25f5049488283d479f",
+    "suggestion-engine.js": "fea99948793e7a6312be22e5298260febb5698d4bfce3bce254fa637bb83be38",
+    "vendor/leaflet/LICENSE.txt": "53e8dc25862014e4324741ca18fbe3611e11d42ef69f59f86ea8c5389647d4cb",
+    "vendor/leaflet/images/layers-2x.png": "066daca850d8ffbef007af00b06eac0015728dee279c51f3cb6c716df7c42edf",
+    "vendor/leaflet/images/layers.png": "1dbbe9d028e292f36fcba8f8b3a28d5e8932754fc2215b9ac69e4cdecf5107c6",
+    "vendor/leaflet/images/marker-icon-2x.png": "00179c4c1ee830d3a108412ae0d294f55776cfeb085c60129a39aa6fc4ae2528",
+    "vendor/leaflet/images/marker-icon.png": "574c3a5cca85f4114085b6841596d62f00d7c892c7b03f28cbfa301deb1dc437",
+    "vendor/leaflet/images/marker-shadow.png": "264f5c640339f042dd729062cfc04c17f8ea0f29882b538e3848ed8f10edb4da",
+    "vendor/leaflet/leaflet.css": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6",
+    "vendor/leaflet/leaflet.js": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a",
+    "vendor/leaflet/leaflet.js.map": "600a10dc5cd110de0699510d322afcbe01c7ca90b4c5f48adc20314c70aac753"
+  },
+  "note": "Hashes describe the runtime files in the repository. Application code, data and assets are unchanged from the frozen prototype. The .nojekyll publishing marker is documented separately in packagingAdjustments. Repository documentation and evidence assets are additional files.",
+  "packagingAdjustments": [
+    {
+      "path": ".nojekyll",
+      "originalSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "repositorySha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "reason": "The GitHub publishing marker contains one newline rather than the original empty file. Application behavior and all application-code, data and asset hashes are unchanged."
+    }
+  ]
+}
